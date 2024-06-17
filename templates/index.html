@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Summarization</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Text Summarization</h1>
+        <form method="POST" action="/summarize" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="file">Or Upload PDF:</label>
+                <input type="file" class="form-control-file" id="file" name="file" accept=".pdf">
+            </div>
+            <button type="submit" class="btn btn-primary">Summarize</button>
+        </form>
+        {% if summary %}
+        <h2>Summary</h2>
+        <p>{{ summary }}</p>
+        <a href="/download_pdf?pdf_path={{ pdf_path }}">Download PDF</a>
+    {% endif %}
+    </div>
+</body>
+</html>
