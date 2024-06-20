@@ -20,6 +20,7 @@ async function uploadFunc() {
     const button = document.getElementById("f_button");
     const upload = document.getElementById("f_upload");
     const label = document.getElementById("f_label");
+    const fileField = document.getElementById("f_file");
 
     /*upload.textContent = "готово"*/
     upload.textContent = "обрабатываем файл..."
@@ -27,6 +28,8 @@ async function uploadFunc() {
     button.style.display = 'none';
     upload.style.display = 'block';
     label.style.display = 'none';
+
+    fileField.disabled = 'disabled';
 
     const loadBox = document.createElement('div');
     loadBox.className = "f_load_box";

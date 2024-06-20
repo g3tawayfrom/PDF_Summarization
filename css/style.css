@@ -6,8 +6,8 @@
     --link-color-medium: #6799fb;
     --link-color-hover: #4880eb;
     --background: #fcfcfc;
-    --text-header-color: #222;
-    --text-color: #00466e;
+    --text-header-color: #323643;
+    --text-color: #6f6f6f;
     --text-color-active: #111;
     --text-color-medium: #14171d;
     --icon-background: #e7eefc;
@@ -36,10 +36,11 @@ body {
 }
 
 header {
-    background: var(--header-background);
-    color: var(--header-font-color);
+    background: #e4f1fe;
+    color: #142d4c;
     font-family: "Inter", sans-serif;
-    margin-bottom: 5.1rem;
+    margin-bottom: 5.6rem;
+    border-bottom: 2px solid #d5def5;
 }
 
 h2 {
@@ -91,21 +92,11 @@ div {
     width: 100%;
     margin: 0 auto;
     padding: 0 1.5rem;
+    font-weight: 800;
+    font-size: 2.25rem;
     display: flex;
     align-items: center;
-    justify-content: center;
-}
-
-.menu {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.menu_item {
-    padding: 12px 24px;
-    position: relative;
+    justify-content: space-between;
 }
 
 .m_container {
@@ -118,6 +109,7 @@ div {
 
 .m_section {
     margin-bottom: 6.4rem;
+    border-top: 2px solid gainsboro;
 }
 
 .m_header {
@@ -127,7 +119,7 @@ div {
 
 .m_header>h2 {
     font-weight: 700;
-    font-size: 3.2rem;
+    font-size: 2.7rem;
     line-height: 4rem;
     color: var(--text-header-color);
     margin-bottom: 1.2rem;
@@ -149,7 +141,7 @@ div {
     font-size: .875rem;
     color: var(--breadcrumbs-color);
     text-align: center;
-    margin-bottom: 8rem;
+    margin-bottom: 6.8rem;
     line-height: 1.3rem;
 }
 
@@ -261,10 +253,11 @@ div {
 
 .t_header {
     font-weight: 700;
-    font-size: 2.2rem;
+    font-size: 2.1rem;
     color: var(--text-header-color);
     text-align: center;
     margin-bottom: 3rem;
+    padding-top: 1.6rem;
     line-height: 2.8rem;
     letter-spacing: -.025rem;
 }
