@@ -108,7 +108,7 @@ div {
 }
 
 .m_section {
-    margin-bottom: 6.4rem;
+    margin-bottom: 6rem;
     border-top: 2px solid gainsboro;
 }
 
@@ -301,4 +301,92 @@ div {
     line-height: 1.6rem;
     padding: 0 .5rem;
     text-align: center;
+}
+
+@media screen and (max-width: 950px) {
+    .m_section {
+        margin-bottom: 2.4rem;
+    }
+
+    .s_box {
+        display: block
+    }
+
+    .s_step {
+        width: 100%;
+        margin-bottom: 3rem;
+        padding: 0 .05rem 2rem
+    }
+
+    .s_step_title {
+        padding: 0 2rem
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .h_header {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 635px) {
+    .h_header {
+        justify-content: space-around;
+        font-size: 3.6rem;
+    }
+}
+
+@media screen and (max-width: 525px) {
+    .m_header>h2 {
+        font-size: 2.5rem;
+        line-height: 3rem;
+        word-break: break-word
+    }
+
+    .t_header {
+        font-size: 1.6rem;
+        font-weight: 700;
+        line-height: 2.7rem
+    }
+
+    .f_upload {
+        padding: 0
+    }
+
+    .f_button {
+        font-size: 1rem;
+        letter-spacing: normal
+    }
+}
+
+@media screen and (max-width: 465px) {
+    header {
+        margin-bottom: 3.6rem;
+    }
+
+    .h_header {
+        font-size: 2.4rem;
+    }
+
+    .h_header>div {
+        width: 40%;
+    }
+
+    .h_header>div>a>img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .h_header>div {
+        width: 32%;
+    }
+
+    .h_header>div>a>img {
+        width: 100%;
+    }
+}
+
+#h_name {
+    justify-content: center;
 }

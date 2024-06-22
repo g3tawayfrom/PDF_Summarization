@@ -8,6 +8,28 @@
     }
 }*/
 
+window.addEventListener('load', () => {
+    const width = window.innerWidth;
+    const name = document.getElementById("h_name");
+
+    if (width <= 635) {
+        name.textContent =  "САБТ";
+    } else {
+        name.textContent =  "СИСТЕМА АНАЛИЗА БОЛЬШИХ ТЕКСТОВ";
+    }
+})
+
+window.addEventListener('resize', () => {
+    const width = window.innerWidth;
+    const name = document.getElementById("h_name");
+
+    if (width <= 635) {
+        name.textContent =  "САБТ";
+    } else {
+        name.textContent =  "СИСТЕМА АНАЛИЗА БОЛЬШИХ ТЕКСТОВ";
+    }
+})
+
 async function uploadFunc() {
     /*await waitingFile()
 
