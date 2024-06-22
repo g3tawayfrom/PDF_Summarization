@@ -30,10 +30,10 @@ async function uploadFunc() {
 
     const form = document.getElementById('form');
 
-    const button = document.getElementById("form_button");
-    const label = document.getElementById("form_label");
-    const upload = document.getElementById("form_upload");
-    const input = document.getElementById("form_input");
+    const button = document.getElementById("button");
+    const label = document.getElementById("label");
+    const upload = document.getElementById("upload");
+    const input = document.getElementById("input");
 
     button.style.display = 'none';
     label.style.display = 'none';
@@ -47,10 +47,10 @@ async function uploadFunc() {
     load.className = "form_load";
 
     const loadLane = document.createElement('div');
-    load.className = "load_lane";
+    loadLane.className = "load_lane";
     load.appendChild(loadLane);
 
-    input.appendChild(load);
+    form.appendChild(load);
 }
 
 /*function waitingFile() {
