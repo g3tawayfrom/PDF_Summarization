@@ -1,6 +1,6 @@
 window.addEventListener('load', () => {
     const width = window.innerWidth;
-    const name = document.getElementById("h_name");
+    const name = document.getElementById("header_name");
 
     if (width <= 635) {
         name.textContent =  "САБТ";
@@ -11,7 +11,7 @@ window.addEventListener('load', () => {
 
 window.addEventListener('resize', () => {
     const width = window.innerWidth;
-    const name = document.getElementById("h_name");
+    const name = document.getElementById("header_name");
 
     if (width <= 635) {
         name.textContent =  "САБТ";
@@ -21,26 +21,44 @@ window.addEventListener('resize', () => {
 })
 
 async function uploadFunc() {
-    const dropZone = document.getElementById('dropZone');
-    const button = document.getElementById("f_button");
-    const upload = document.getElementById("f_upload");
-    const label = document.getElementById("f_label");
-    const fileField = document.getElementById("f_file");
+    /*await waitingFile()
 
-    upload.textContent = "обрабатываем файл...";
+    const fileInput = document.getElementById("f_file");
+    for (const file of fileInput.files) {
+        alert(file.name);
+    }*/
+
+    const form = document.getElementById('form');
+
+    const button = document.getElementById("button");
+    const label = document.getElementById("label");
+    const upload = document.getElementById("upload");
+    const input = document.getElementById("input");
 
     button.style.display = 'none';
-    upload.style.display = 'block';
     label.style.display = 'none';
 
-    fileField.disabled = 'disabled';
+    upload.textContent = "обрабатываем файл..."
+    upload.style.display = 'block';
 
-    const loadBox = document.createElement('div');
-    loadBox.className = "f_load_box";
+    input.disabled = 'disabled';
 
     const load = document.createElement('div');
-    load.className = "f_load";
-    loadBox.appendChild(load);
+    load.className = "form_load";
 
-    dropZone.appendChild(loadBox);
+    const loadLane = document.createElement('div');
+    loadLane.className = "load_lane";
+    load.appendChild(loadLane);
+
+    form.appendChild(load);
 }
+
+/*function waitingFile() {
+    let temp = 0;
+    while (temp === 0) {
+        const fileInput = document.getElementById("f_file");
+        if (fileInput.length === undefined) {
+            temp = 1;
+        }
+    }
+}*/
