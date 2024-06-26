@@ -25,12 +25,25 @@
                     <div id="form" class="form">
                         <input type="file" class="form-control-file" id="file" name="file" accept=".pdf">
                     </div>
-                    <button type="submit" class="btn btn-primary">Summarize</button>
+                    <button type="submit" class="btn btn-primary">Создать выдержку</button>
                 </form>
                 {% if summary %}
-                    <h2>Summary</h2>
-                    <p>{{ summary }}</p>
-                    <a href="/download_pdf?pdf_path={{ pdf_path }}">Download PDF</a>
+                    <div class="summaries">
+                        <h2>Резюме:</h2>
+                        <div class="summary-block">
+                            <h3>BERT Summary:</h3>
+                            <p>{{ summary.bert }}</p>
+                        </div>
+                        <div class="summary-block">
+                            <h3>GPT-2 Summary:</h3>
+                            <p>{{ summary.gpt2 }}</p>
+                        </div>
+                        <div class="summary-block">
+                            <h3>XLNet Summary:</h3>
+                            <p>{{ summary.xlnet }}</p>
+                        </div>
+                        <a href="/download_pdf?pdf_path={{ pdf_path }}" class="btn btn-secondary">Скачать PDF</a>
+                    </div>
                 {% endif %}
                 <p class="subtext">
                     Процесс обработки, анализа и сборки может занять некоторое время.
