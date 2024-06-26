@@ -54,7 +54,7 @@ This project provides a web application built with Flask to extract and summariz
 ## File Structure
 
 - `app.py`: Main application file containing the Flask routes and logic for handling file uploads and text summarization.
-- `pdf_processing.py`: Contains functions for extracting text from PDF files, processing tables, and summarizing text using different models.
+- `summarization.py`: Contains functions for extracting text from PDF files, processing tables, and summarizing text using different models.
 - `requirements.txt`: Lists all the dependencies required for the project.
 - `templates/index.html`: HTML template for the web application interface.
 
