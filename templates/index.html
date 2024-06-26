@@ -1,26 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text Summarization</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <title>САБТ</title>
 </head>
 <body>
-    <div class="container mt-5">
-        <h1 class="mb-4">Text Summarization</h1>
-        <form method="POST" action="/summarize" enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="file">Or Upload PDF:</label>
-                <input type="file" class="form-control-file" id="file" name="file" accept=".pdf">
+    <header>
+        <div class="header">
+            <div><a href="index.html"><img src="{{ url_for('static', filename='content/logo.png') }}" alt="Логотип"></a></div>
+            <span id="header_name">СИСТЕМА АНАЛИЗОВ БОЛЬШИХ ТЕКСТОВ</span>
+        </div>
+    </header>
+    <main>
+        <div class="converter">
+            <div class="conv_header">
+                <h2>Краткая выдержка документа</h2>
+                <h3>Создайте краткую выдержку основной информации из документа</h3>
             </div>
-            <button type="submit" class="btn btn-primary">Summarize</button>
-        </form>
-        {% if summary %}
-        <h2>Summary</h2>
-        <p>{{ summary }}</p>
-        <a href="/download_pdf?pdf_path={{ pdf_path }}">Download PDF</a>
-    {% endif %}
-    </div>
+            <div class="conv_main">
+                <form method="POST" action="/summarize" enctype="multipart/form-data">
+                    <div id="form" class="form">
+                        <input type="file" class="form-control-file" id="file" name="file" accept=".pdf">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Создать выдержку</button>
+                </form>
+                {% if summary %}
+                    <div class="summaries">
+                        <h2>Резюме:</h2>
+                        <div class="summary-block">
+                            <h3>BERT Summary:</h3>
+                            <p>{{ summary.bert }}</p>
+                        </div>
+                        <div class="summary-block">
+                            <h3>GPT-2 Summary:</h3>
+                            <p>{{ summary.gpt2 }}</p>
+                        </div>
+                        <div class="summary-block">
+                            <h3>XLNet Summary:</h3>
+                            <p>{{ summary.xlnet }}</p>
+                        </div>
+                        <a href="/download_pdf?pdf_path={{ pdf_path }}" class="btn btn-secondary">Скачать PDF</a>
+                    </div>
+                {% endif %}
+                <p class="subtext">
+                    Процесс обработки, анализа и сборки может занять некоторое время.
+                    <strong>Пожалуйста, не перезагружайте страницу.</strong>
+                </p>
+            </div>
+        </div>
+        <div class="tips">
+            <h3 class="tips_header">Как создать выдержку основной информации из вашего документа</h3>
+            <div class="tips_steps">
+                <div class="step">
+                    <div class="step_icon">
+                        <img src="{{ url_for('static', filename='content/p_pic11.png') }}" alt="Шаг 1">
+                    </div>
+                    <div class="step_number">Шаг 1</div>
+                    <div class="step_title">Для того чтобы начать процесс, вам необходимо кликнуть по области загрузки или просто перетащить туда ваш файл в формате <strong>PDF</strong>.</div>
+                </div>
+                <div class="step">
+                    <div class="step_icon">
+                        <img src="{{ url_for('static', filename='content/p_pic21.png') }}" alt="Шаг 2">
+                    </div>
+                    <div class="step_number">Шаг 2</div>
+                    <div class="step_title">Как только ваш документ будет загружен, наш алгоритм на основе <strong>машинного обучения</strong> проанализирует текст, выделив из него ключевую информацию.</div>
+                </div>
+                <div class="step">
+                    <div class="step_icon">
+                        <img src="{{ url_for('static', filename='content/p_pic31.png') }}" alt="Шаг 3">
+                    </div>
+                    <div class="step_number">Шаг 3</div>
+                    <div class="step_title">Система самостоятельно собирает отобранную информацию в новый файл <strong>PDF</strong>, автоматически отдавая на выходе готовый файл.</div>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
