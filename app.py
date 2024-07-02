@@ -1,10 +1,6 @@
-import os
 from flask import Flask, request, render_template, send_file
-from fpdf import FPDF
 import pdfplumber
 from summarizer import Summarizer, TransformerSummarizer
-
-
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
@@ -13,7 +9,6 @@ import os
 
 
 app = Flask(__name__)
-
 
 def extract_text(pdf_file):
     text = ""
@@ -87,21 +82,16 @@ def download_pdf():
 def save_summary_to_pdf(summary):
     pdf_path = os.path.join("summaries", "summary.pdf")
     os.makedirs(os.path.dirname(pdf_path), exist_ok=True)
-
     doc = SimpleDocTemplate(pdf_path, pagesize=letter)
     styles = getSampleStyleSheet()
-
-    # Create a custom style
     custom_style = ParagraphStyle(
-        'CustomStyle',
+        'Custom',
         parent=styles['Normal'],
         fontName='Helvetica',
         fontSize=12,
         leading=15
     )
-
     flowables = []
-
     for key, value in summary.items():
         flowables.append(Paragraph(f"{key.capitalize()} Summary:", custom_style))
         flowables.append(Spacer(1, 0.2 * inch))
