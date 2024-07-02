@@ -21,8 +21,8 @@ This project provides a web application built with Flask to extract and summariz
 1. **Clone the repository:**
 
     ```sh
-    git clone https://github.com/g3tawayfrom/itmo_practice.git
-    cd itmo_practice
+    git clone https://github.com/g3tawayfrom/PDF_Summarization.git
+    cd PDF_Summarization
     ```
 
 2. **Install the dependencies:**
