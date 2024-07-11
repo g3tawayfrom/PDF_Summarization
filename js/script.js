@@ -53,6 +53,26 @@ async function uploadFunc() {
     form.appendChild(load);
 }
 
+async function textShowcase() {
+    const select_header = document.getElementById('select_header');
+    const form_select = document.getElementById('form_select');
+
+    const form = document.getElementById('form');
+    const subtext = document.getElementById('subtext');
+
+    const scroll = document.getElementById('scroll');
+    const buttons = document.getElementById('buttons');
+
+    select_header.style.display = 'none';
+    form_select.style.display = 'none';
+
+    form.style.display = 'none';
+    subtext.style.display = 'none';
+
+    scroll.style.display = 'block';
+    buttons.style.display = 'flex';
+}
+
 /*function waitingFile() {
     let temp = 0;
     while (temp === 0) {

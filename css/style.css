@@ -24,7 +24,7 @@ header {
     background: #e4f1fe;
     color: #142d4c;
     font-family: "Inter", sans-serif;
-    margin-bottom: 4.5rem;
+    margin-bottom: 3rem;
     border-bottom: 2px solid #d5def5;
 }
 
@@ -33,6 +33,15 @@ h2, h3, div, label {
     padding: 0;
     border: 0;
     vertical-align: baseline;
+}
+
+select {
+    border: 1px solid #142d4c;
+    width: 24%;
+    margin: 0 38% 2%;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-align: center;
 }
 
 h2 {
@@ -116,7 +125,7 @@ label {
     color: #666;
     max-width: 56rem;
     margin: 0 auto;
-    padding-bottom: 1.8rem;
+    padding-bottom: 3rem;
 }
 
 .subtext {
@@ -128,21 +137,32 @@ label {
     line-height: 1.3rem;
 }
 
-.form {
-    height: 13rem;
+.output {
     width: 100%;
-    background: #fff;
-    border: 2px dashed #d4d4d4;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2.4rem;
     position: relative;
-    border-radius: 2px;
 }
 
-.form_button {
+.output_scroll {
+    display: none;
+    border: 2px solid #d4d4d4;
+    height: 420px;
+    overflow: auto;
+    padding: 20px;
+    margin-bottom: 1.8rem;
+    font-size: 1.5rem;
+}
+
+.output_buttons {
+    display: none;
+    gap: 5rem;
+}
+
+.output_button, .form_button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -159,6 +179,41 @@ label {
     margin-bottom: 1rem;
     letter-spacing: .5px;
     transition: background .2s;
+}
+
+.output_button {
+    width: 10rem;
+}
+
+.select_header {
+    border-top: 1px solid #d5def5;
+    border-bottom: 1px solid #d5def5;
+    padding: 1% 0;
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-align: center;
+    background: aliceblue;
+    color: #142d4c;
+}
+
+.form {
+    height: 13rem;
+    width: 100%;
+    background: #fff;
+    border: 2px dashed #d4d4d4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 2.5rem;
+    position: relative;
+    border-radius: 2px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .form_upload {
@@ -221,6 +276,17 @@ label {
     right: 0;
     bottom: 0;
     cursor: pointer;
+}
+
+.text_output {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 2.5rem;
+    position: relative;
+    border-radius: 2px;
 }
 
 .tips_header {
@@ -298,12 +364,21 @@ label {
     .header {
         font-size: 2rem;
     }
+
+    .select_header {
+        font-size: 1.4rem;
+    }
 }
 
 @media screen and (max-width: 635px) {
     .header {
         justify-content: space-around;
         font-size: 3.6rem;
+    }
+
+    select {
+        width: 32%;
+        margin: 0 34% 4%;
     }
 }
 
@@ -312,6 +387,10 @@ label {
         font-size: 2.5rem;
         line-height: 3rem;
         word-break: break-word
+    }
+
+    .select_header {
+        font-size: 1.4rem;
     }
 
     .tips_header {
@@ -345,6 +424,11 @@ label {
 
     .header>div>a>img {
         width: 100%;
+    }
+
+    select {
+        width: 50%;
+        margin: 0 25% 5%;
     }
 }
 
